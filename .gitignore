@@ -7,7 +7,7 @@ __pycache__/
 dataset/
 dataset/
 projects/*/*/models/
-projects/*/*/mini_test/
+#projects/*/*/mini_test/
 
 # C extensions
 *.so
