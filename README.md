@@ -59,7 +59,7 @@ you may try other Tensorflow UNet Models:<br>
 <h3>1. Dataset Citation</h3>
 The original dataset used here has been taken from the following web-site<br>
 <b>ORCA: ORal Cancer Annotated dataset</b><br>
-<pre>https://sites.google.com/unibas.it/orca/home</pre><br>
+<pre>https://sites.google.com/unibas.it/orca/home</pre>
 
 <pre>
 If you use the ORCA data, please cite:
