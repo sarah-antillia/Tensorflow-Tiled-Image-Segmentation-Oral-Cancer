@@ -57,6 +57,17 @@ you may try other Tensorflow UNet Models:<br>
 <br>
 
 <h3>1. Dataset Citation</h3>
+The original dataset used here has been taken from the following web-site<br>
+<b>ORCA: ORal Cancer Annotated dataset</b><br>
+<pre>https://sites.google.com/unibas.it/orca/home</pre><br>
+
+<pre>
+If you use the ORCA data, please cite:
+F.  Martino,  D.D.  Bloisi,  A.  Pennisi,  M. Fawakherji,  G. Ilardi,  D. Russo,  D. Nardi,  S. Staibano, F. Merolla
+"Deep Learning-based Pixel-wise Lesion Segmentation on Oral Squamous Cell Carcinoma Images"
+Applied Sciences: 2020, 10(22), 8285; https://doi.org/10.3390/app10228285  [PDF]
+</pre>
+<br>
 
 <br>
 
