@@ -268,7 +268,7 @@ Tiled inferred test masks<br>
 <hr>
 
 <b>Enlarged Masks Comparison</b><br>
-As shown below, the tiled-inferred-mask seem to be slightly clear than those of non-tiled-inferred-mask.<br>
+As shown below, the tiled-inferred-masks seem to be slightly clear than non-tiled-inferred-masks.<br>
 
 <table>
 <tr>
