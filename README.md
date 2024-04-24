@@ -10,7 +10,7 @@ we have already applied a Tiled Image Segmentation strategy to a Muliple-Myeloma
 This is the second example to apply the strategy to Oral-Cancer Segmentation Model.
 
 As shown in <a href="https://github.com/sarah-antillia/ImageMask-Dataset-ORCA">ImageMask-Dataset-ORCA</a>, the pixel-size of the original images and masks in validation and test dataset of
-<a href="https://sites.google.com/unibas.it/orca/home?authuser=0">ORCA</a> is 4500x4500, and too large to use for a training of an orginary segmentation model.<br>
+<a href="https://sites.google.com/unibas.it/orca/home?authuser=0">ORCA</a> is 4500x4500, and too large to use for a training of an ordinary segmentation model.<br>
 Therefore, Tiled-Image-Segmentation may be effective to infer any segmenation regions for the large images.<br>
 <br> 
 In this experiment, we employed the following strategy:<br>
