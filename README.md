@@ -13,10 +13,10 @@ As shown in <a href="https://github.com/sarah-antillia/ImageMask-Dataset-ORCA">I
 <a href="https://sites.google.com/unibas.it/orca/home?authuser=0">ORCA</a> is very large, 4500x4500 to use for a training of an orginary segmentation model.<br>
 Therefore, Tiled-Image-Segmentation may be effective to infer any segmenation regions for the large images.<br>
 <br> 
-In this experiment, we take the following strategy.<br>
+In this experiment, we employed the following strategy:<br>
 <b>
-1. Train and validate a TensorflowUNet Model by 512x512 resized Oral-Cancer-ImageMask-Dataset.<br>
-2. Apply Tiled-Image-Segmentation inference method to predict the segmentation regions for a test images of 4500x4500 pixel size. 
+1. We trained and validated a TensorFlow UNet model using the Oral Cancer Image Mask Dataset, which was resized to 512x512 pixels.<br>
+2. We applied the Tiled-Image Segmentation inference method to predict the segmentation regions for a test image with a resolution of 4500x4500 pixels. 
 <br>
 </b>  
  
