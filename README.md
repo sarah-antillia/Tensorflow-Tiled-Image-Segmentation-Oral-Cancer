@@ -22,7 +22,7 @@ In this experiment, we employed the following strategy:<br>
  
  
 <hr>
-Acutual Tiled Image Segmentation Sample for an image of 4500x4500 pixel size.<br>
+Actual Tiled Image Segmentation Sample for an image of 4500x4500 pixel size.<br>
 <table>
 <tr>
 <th>Input: image</th>
