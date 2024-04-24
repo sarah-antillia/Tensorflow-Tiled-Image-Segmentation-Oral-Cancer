@@ -304,7 +304,7 @@ As shown below, the tiled-inferred-masks seem to be slightly clear than non-tile
 </table>
 <br>
 <br>
-As shown below, the circle-border of tiled-inferred-mask seems to be smoother than that of non-tiled-inffered-mask.<br>
+As shown below, the circle-border of the tiled-inferred-mask seems to be slightly smoother than that of the non-tiled-inffered-mask.<br>
 <br>
 <table>
 <tr>
