@@ -1,5 +1,6 @@
-<h2>Tensorflow-Tiled-Image-Segmentation-Oral-Cancer (2024/04/25)</h2>
-
+<h2>Tensorflow-Tiled-Image-Segmentation-Oral-Cancer (Updated: 2024/04/25)</h2>
+<li>2024/04/25: Modified 'binaize' parameter to be True in [mask] section of train_eval_infer.config file </li>
+<br>
 This is an experimental Tiled Image Segmentation project for Oral-Cancer based on
 the <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>, and
 <a href="https://drive.google.com/file/d/1cOSiTXeU_l8duN_DNTyPFnfeZEuMKodn/view?usp=sharing">
@@ -57,6 +58,17 @@ you may try other Tensorflow UNet Models:<br>
 <br>
 
 <h3>1. Dataset Citation</h3>
+The original dataset used here has been taken from the following web-site<br>
+<b>ORCA: ORal Cancer Annotated dataset</b><br>
+<pre>https://sites.google.com/unibas.it/orca/home</pre>
+
+<pre>
+If you use the ORCA data, please cite:
+F.  Martino,  D.D.  Bloisi,  A.  Pennisi,  M. Fawakherji,  G. Ilardi,  D. Russo,  D. Nardi,  S. Staibano, F. Merolla
+"Deep Learning-based Pixel-wise Lesion Segmentation on Oral Squamous Cell Carcinoma Images"
+Applied Sciences: 2020, 10(22), 8285; https://doi.org/10.3390/app10228285  [PDF]
+</pre>
+<br>
 
 <br>
 
@@ -190,11 +202,13 @@ blursize      = None
 [mask]
 blur      = False
 blur_size = (3,3)
-binarize  = False
+binarize  = True
+threshold = 100
+
 </pre>
 
 The training process has just been stopped at epoch 97 by an early-stopping callback as shown below.<br><br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/train_console_output_at_epoch_97.png" width="720" height="auto"><br>
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/train_console_output_at_epoch_86.png" width="720" height="auto"><br>
 <br>
 <br>
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/eval/train_metrics.csv">train_metrics.csv</a><br>
@@ -218,13 +232,13 @@ and run the following bat file to evaluate TensorflowUNet model for Oral-Cancer.
 python ../../../src/TensorflowUNetEvaluator.py ./train_eval_infer_aug.config
 </pre>
 Evaluation console output:<br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/evaluate_console_output_at_epoch_97.png" width="720" height="auto">
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/evaluate_console_output_at_epoch_86.png" width="720" height="auto">
 <br><br>
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/evaluation.csv">evaluation.csv</a><br>
 The loss (bce_dice_loss) score for this test dataset is very low as shown below.<br>
 <pre>
-loss,0.0678
-binary_accuracy,0.9549
+loss,0.0981
+binary_accuracy,0.9455
 </pre>
 
 <h3>
