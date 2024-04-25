@@ -204,7 +204,6 @@ blur      = False
 blur_size = (3,3)
 binarize  = True
 threshold = 100
-
 </pre>
 
 The training process has just been stopped at epoch 97 by an early-stopping callback as shown below.<br><br>
