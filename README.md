@@ -1,5 +1,5 @@
 <h2>Tensorflow-Tiled-Image-Segmentation-Oral-Cancer (Updated: 2024/04/25)</h2>
-<li>2024/04/25: Modified 'binaize' parameter to be True in [mask] section of train_eval_infer.config file </li>
+<li>2024/04/25: Modified 'binarize' parameter to be True in [mask] section of train_eval_infer.config file </li>
 <br>
 This is an experimental Tiled Image Segmentation project for Oral-Cancer based on
 the <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>, and
