@@ -1,5 +1,9 @@
 <h2>Tensorflow-Tiled-Image-Segmentation-Oral-Cancer (Updated: 2024/04/25)</h2>
 <li>2024/04/25: Modified 'binarize' parameter to be True in [mask] section of train_eval_infer.config file </li>
+<li>2024/04/26: Modified 'threshold'parameter to be used to binarize the masks in [mask] section of train_eval_infer.config file </li>
+<li>2024/04/26: Added <a href="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/ImageBinarizer.py">ImageBinarizer.py</a> to 
+visualize the effect of a threshold parameter which is used to binarize the image files. Please check  <a href="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/mini_test_masks\binarized">a binarize_mask folder</a>
+</li> 
 <br>
 This is an experimental Tiled Image Segmentation project for Oral-Cancer based on
 the <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>, and
@@ -7,12 +11,12 @@ the <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API
 Oral-Cancer-ImageMask-Dataset-V1.zip</a> 
 <br>
 As shown in <a href="https://github.com/sarah-antillia/Tensorflow-Image-Segmentation-API">Tensorflow-Image-Segmentation-API</a>,
-we have already applied a Tiled Image Segmentation strategy to a Muliple-Myeloma Segmentation UNet Model.<br>  
+we have already applied a Tiled Image Segmentation strategy to a MultipleMyeloma Segmentation UNet Model.<br>  
 This is the second example to apply the strategy to Oral-Cancer Segmentation Model.
 
 As shown in <a href="https://github.com/sarah-antillia/ImageMask-Dataset-ORCA">ImageMask-Dataset-ORCA</a>, the pixel-size of the original images and masks in validation and test dataset of
 <a href="https://sites.google.com/unibas.it/orca/home?authuser=0">ORCA</a> is 4500x4500, and too large to use for a training of an ordinary segmentation model.<br>
-Therefore, Tiled-Image-Segmentation may be effective to infer any segmenation regions for the large images.<br>
+Therefore, Tiled-Image-Segmentation may be effective to infer any segmentation regions for the large images.<br>
 <br> 
 In this experiment, we employed the following strategy:<br>
 <b>
@@ -132,7 +136,7 @@ Please move to ./projects/Oral-Cancer and run the following bat file.<br>
 </pre>
 <pre>
 ; train_eval_infer.config
-; 2024/04/25 (C) antillia.com
+; 2024/04/26 (C) antillia.com
 
 [model]
 model         = "TensorflowUNet"
@@ -203,11 +207,12 @@ blursize      = None
 blur      = False
 blur_size = (3,3)
 binarize  = True
-threshold = 100
+;algorithm = "cv2.THRESH_BINARY"
+threshold = 118
 </pre>
 
 The training process has just been stopped at epoch 97 by an early-stopping callback as shown below.<br><br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/train_console_output_at_epoch_86.png" width="720" height="auto"><br>
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/train_console_output_at_epoch_70.png" width="720" height="auto"><br>
 <br>
 <br>
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/eval/train_metrics.csv">train_metrics.csv</a><br>
@@ -231,13 +236,14 @@ and run the following bat file to evaluate TensorflowUNet model for Oral-Cancer.
 python ../../../src/TensorflowUNetEvaluator.py ./train_eval_infer_aug.config
 </pre>
 Evaluation console output:<br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/evaluate_console_output_at_epoch_86.png" width="720" height="auto">
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/asset/evaluate_console_output_at_epoch_70.png" width="720" height="auto">
 <br><br>
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Oral-Cancer/evaluation.csv">evaluation.csv</a><br>
-The loss (bce_dice_loss) score for this test dataset is very low as shown below.<br>
+The loss (bce_dice_loss) score for this test dataset is low as shown below.<br>
 <pre>
-loss,0.0981
-binary_accuracy,0.9455
+loss,0.1487
+binary_accuracy,0.9136
+
 </pre>
 
 <h3>
@@ -285,7 +291,7 @@ As shown below, the tiled-inferred-masks seem to be slightly clear than non-tile
 
 <table>
 <tr>
-<th>Mask (ground_trouth)</th>
+<th>Mask (ground_truth)</th>
 <th>Non-tiled-inferred-mask</th>
 <th>Tiled-inferred-mask</th>
 </tr>
@@ -317,7 +323,7 @@ As shown below, the tiled-inferred-masks seem to be slightly clear than non-tile
 </table>
 <br>
 <br>
-As shown below, the circle-border of the tiled-inferred-mask seems to be slightly smoother than that of the non-tiled-inffered-mask.<br>
+As shown below, the tiled-inferred-mask contains more detailed pixel level information than the non-tiled-inffered-mask.<br>
 <br>
 <table>
 <tr>
