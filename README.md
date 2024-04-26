@@ -323,7 +323,7 @@ As shown below, the tiled-inferred-masks seem to be slightly clear than non-tile
 </table>
 <br>
 <br>
-As shown below, the tiled-inferred-mask contains more detailed pixel level information than the non-tiled-inffered-mask.<br>
+As shown below, the tiled-inferred-mask contains more detailed pixel level information than the non-tiled-inferred-mask.<br>
 <br>
 <table>
 <tr>
